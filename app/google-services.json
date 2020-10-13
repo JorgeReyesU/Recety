@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "534578214532",
+    "firebase_url": "https://login-28a5f.firebaseio.com",
+    "project_id": "login-28a5f",
+    "storage_bucket": "login-28a5f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534578214532:android:37f95c585d71de0df134d1",
+        "android_client_info": {
+          "package_name": "com.example.recety"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "534578214532-u2erjg6p5rrqto5n3cm2lqonegbb7ab0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.recety",
+            "certificate_hash": "9f8fad5042549b7015ff118b5905d9eaa7e68c75"
+          }
+        },
+        {
+          "client_id": "534578214532-5rt0ambkkoaa9eko6b4st0a3piloav76.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTIJGws-mT36V9yOFnh54vdddDj7OIYUY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "534578214532-5rt0ambkkoaa9eko6b4st0a3piloav76.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

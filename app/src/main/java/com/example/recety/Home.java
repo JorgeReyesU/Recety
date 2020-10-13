@@ -1,6 +1,8 @@
 package com.example.recety;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +10,12 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -20,6 +28,8 @@ public class Home extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    Fragment someFragment;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -55,6 +65,14 @@ public class Home extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
+
+    public void CerrarSesion(View view){
+        Toast.makeText(getActivity().getApplicationContext(), "Cerro Sesion",Toast.LENGTH_SHORT).show();
+        FirebaseAuth.getInstance().signOut();
+        Intent i = new Intent(getActivity().getApplicationContext(), VentanaLogin.class);
+        startActivity(i);
+    }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
