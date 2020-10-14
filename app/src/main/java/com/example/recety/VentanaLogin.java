@@ -26,4 +26,9 @@ public class VentanaLogin extends AppCompatActivity {
             Intent i = new Intent(this, Registrarse.class);
             startActivity(i);
     }
+
+    public void irHome(View view){
+        Intent i = new Intent(this, MainActivity.class );
+        startActivity(i);
+    }
 }

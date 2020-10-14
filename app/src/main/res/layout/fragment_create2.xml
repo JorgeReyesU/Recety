@@ -1,24 +1,391 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="12dp"
     android:layout_height="match_parent"
     tools:context=".Create"
-
-
-
-
     >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create"
-        android:textSize="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+
+
+        <EditText
+            android:id="@+id/txt_NombreReceta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Nombre Receta"
+            android:inputType="textPersonName"
+            android:paddingTop="15dp" />
+
+        <EditText
+            android:id="@+id/txt_DescripcionReceta"
+            android:layout_width="247dp"
+            android:layout_height="118dp"
+            android:hint="Descripcion Receta"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="122dp" />
+
+    <ImageView
+        android:id="@+id/Foto"
+        android:layout_width="151dp"
+        android:layout_height="147dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnTomaFoto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnGuardar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:gravity="center"
+        android:text="Tomar Foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente1"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 1"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad1"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 1."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente2"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 2"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad2"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 2."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente3"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 3"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad3"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 3."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente4"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 4"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad4"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 4."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente5"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 5"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad5"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 5."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente6"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 6"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad6"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 6."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente7"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 7"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad7"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 7."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente8"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 8"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad8"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 8."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente9"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 9"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad9"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 9."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="408dp"
+                android:layout_height="95dp"
+                android:orientation="horizontal"
+                android:padding="12dp"
+                tools:ignore="MissingConstraints"
+                tools:layout_editor_absoluteX="-12dp"
+                tools:layout_editor_absoluteY="-16dp">
+
+                <EditText
+                    android:id="@+id/txt_Ingrediente10"
+                    android:layout_width="261dp"
+                    android:layout_height="67dp"
+                    android:hint="Ingrediente 10"
+                    android:inputType="textPersonName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteY="122dp" />
+
+                <EditText
+                    android:id="@+id/Cantidad10"
+                    android:layout_width="107dp"
+                    android:layout_height="67dp"
+                    android:hint="Und 10."
+                    android:inputType="textPersonName"
+                    tools:ignore="MissingConstraints"
+                    tools:layout_editor_absoluteX="289dp"
+                    tools:layout_editor_absoluteY="16dp" />
+            </LinearLayout>
+
+            <ListView
+                android:id="@+id/lv_datosReceta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -15,4 +15,6 @@
     <string name="btn_enviar_pass">Enviar</string>
 
     <string name="btn_registrarse_sesion">Registrarse</string>
+
+    <string name="btn_irHome">Iniciar sin Login</string>
 </resources>
