@@ -3,6 +3,8 @@ package com.example.recety;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -16,6 +18,11 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,6 +34,8 @@ public class Settings extends Fragment {
     TextView name,name2;
     TextView correo;
     private Button btnCerrarSesion;
+    private FirebaseAuth mAuth;
+    private DatabaseReference mDatabase;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -75,20 +84,38 @@ public class Settings extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings2, container, false);
-
+        mAuth = FirebaseAuth.getInstance();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         btnCerrarSesion = v.findViewById(R.id.CerrarSesion);
         name= v.findViewById(R.id.textNombre2);
         correo = v.findViewById(R.id.textCorreo2);
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getActivity().getApplicationContext());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        FirebaseUser userfire = FirebaseAuth.getInstance().getCurrentUser();
+
         if(user != null){
-
-            name.setText(userfire.getDisplayName());
-            correo.setText(userfire.getEmail());
-
-
+            name.setText(user.getDisplayName());
+            correo.setText(user.getEmail());
         }
+
+        String id = mAuth.getCurrentUser().getUid();
+        mDatabase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists()){
+                    String nombre = dataSnapshot.child("nombre").getValue().toString();
+                    String email = dataSnapshot.child("email").getValue().toString();
+                    name.setText(nombre);
+                    correo.setText(email);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         btnCerrarSesion.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){

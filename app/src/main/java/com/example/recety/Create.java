@@ -9,21 +9,30 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.recety.model.Receta;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
@@ -33,10 +42,15 @@ import static com.firebase.ui.auth.AuthUI.getApplicationContext;
  * create an instance of this fragment.
  */
 public class Create extends Fragment {
+    private List<Receta> listR = new ArrayList<Receta>();
+    ArrayAdapter<Receta> arrayAdapterR;
     TextView receta,descripcion;
     private Button btnGuardarReceta;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
+    TextView correo;
+    ListView listV_personas;
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -94,14 +108,18 @@ public class Create extends Fragment {
         FirebaseUser userfire = FirebaseAuth.getInstance().getCurrentUser();
         final String idgoogle = userfire.getUid();
         final String idfire = user.getUid();
+
+
         if(user != null || userfire != null){
             btnGuardarReceta.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
                     //ESTE ES EL MAPA DE DATOS QUE VA A INGRESAR AL NUEVO USUARIO CREADO
                     FirebaseUser userfire = FirebaseAuth.getInstance().getCurrentUser();
-                    int id = 5;
-                    id++;
+                    String id;
+
+
+                    id = UUID.randomUUID().toString();
                     String idreceta = "" + id;
                     String nombrereceta = receta.getText().toString();
                     String descripcionreceta = descripcion.getText().toString();
@@ -136,8 +154,11 @@ public class Create extends Fragment {
             Toast.makeText(getActivity().getApplicationContext(), "iniciar sesion",Toast.LENGTH_SHORT).show();
         }
 
+
         return v;
     }
+
+
 
 
 }

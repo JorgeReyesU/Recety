@@ -43,7 +43,7 @@ public class foto extends AppCompatActivity {
         setContentView(R.layout.fragment_create2);
 
 
-        imagen = findViewById(R.id.Foto);
+        //imagen = findViewById(R.id.Foto);
        // btnTomarFoto = findViewById(R.id.btnTomar);
 
 
