@@ -8,6 +8,8 @@ import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -20,8 +22,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class VentanaLogin extends AppCompatActivity {
-    private TextView mTextViewResult;
-    private RequestQueue mQueue;
+
     TextView IrHome, IrRegistrarse;
 
     @Override
@@ -46,18 +47,14 @@ public class VentanaLogin extends AppCompatActivity {
 
         });
 
-        mTextViewResult = findViewById(R.id.text_view_result);
-     mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
-       TextView buttonParse = findViewById(R.id.button_parse);
-       mQueue = Volley.newRequestQueue(this);
+    }
 
-        buttonParse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                jsonParse();
-            }
-        });
-
+    public  void irInvesoft(View v){
+        //navegar
+        Intent irInv = new Intent(this, Invesoft.class);
+        //flags
+        irInv.addFlags(irInv.FLAG_ACTIVITY_CLEAR_TOP | irInv.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(irInv);
 
     }
 
@@ -77,38 +74,4 @@ public class VentanaLogin extends AppCompatActivity {
         startActivity(i);
     }
 
-    private void jsonParse(){
-        String url="https://invessoft.com/api/eventos/1";
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                try {
-                    JSONArray jsonArray = response.getJSONArray("agenda");
-                    for (int i = 0; i < jsonArray.length(); i++ ){
-                        JSONObject agend = jsonArray.getJSONObject(i);
-
-                        int id_trabajo_agenda = agend.getInt("id_trabajo_agenda");
-                        String Fecha = agend.getString("fecha");
-                        String hora_inicio = agend.getString("hora_inicio");
-                        String hora_fin = agend.getString("hora_fin");
-                        int id_espacio = agend.getInt("id_espacio");
-
-
-
-                        mTextViewResult.append("Id Trabajo Agenda: " + String.valueOf(id_trabajo_agenda) + ", " + "Fecha: " + Fecha + ", " + "Hora Inicio: " + hora_inicio + ", " + "Hora Fin: " + hora_fin + ", " + "Id Espacio: " + String.valueOf(id_espacio) + "\n\n");
-                    }
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-        });
-        mQueue.add(request);
-
-    }
 }

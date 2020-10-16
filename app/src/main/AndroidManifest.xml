@@ -3,9 +3,9 @@
     package="com.example.recety">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -14,14 +14,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".Invesoft"></activity>
         <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-7306760026821357~7218892776"/>
+            android:value="ca-app-pub-7306760026821357~7218892776" />
 
-        <activity android:name=".foto"></activity>
-        <activity android:name=".RecuperarContrasena"></activity>
+        <activity android:name=".foto" />
+        <activity android:name=".RecuperarContrasena" />
         <activity android:name=".Registrarse" />
         <activity android:name=".IniciarSesion" />
         <activity android:name=".VentanaLogin">
@@ -31,12 +31,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
-
-        <!-- PARA USAR LA CAMARA EN ANDROID 7 O SUPERIOR -->
+        <activity android:name=".MainActivity" /> <!-- PARA USAR LA CAMARA EN ANDROID 7 O SUPERIOR -->
         <provider
-            android:authorities="${applicationId}.provider"
             android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data
