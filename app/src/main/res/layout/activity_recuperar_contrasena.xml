@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".RecuperarContrasena">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="627dp"
+        android:layout_width="384dp"
+        android:layout_height="810dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,19 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.888">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="263dp"
+            android:layout_height="132dp"
+            app:srcCompat="@drawable/olvido" />
+
         <EditText
             android:id="@+id/Correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Correo" />
+            android:hint="Correo"
+            android:inputType="textPersonName" />
 
         <Button
             android:id="@+id/IniciarSesionBtn"
+            style="@style/FirebaseUI.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:background="#5E56CC"
             android:onClick="EnviarCorreo"
             android:text="@string/btn_enviar_pass" />
 

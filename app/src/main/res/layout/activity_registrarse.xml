@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".Registrarse">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="627dp"
+        android:layout_width="378dp"
+        android:layout_height="821dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,22 +18,27 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.888">
 
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="260dp"
+            android:src="@drawable/registro" />
+
         <EditText
             android:id="@+id/Nombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Nombre completo" />
+            android:hint="Nombre completo"
+            android:inputType="textPersonName" />
 
         <EditText
             android:id="@+id/Correo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:hint="Correo" />
-
+            android:hint="Correo"
+            android:inputType="textPersonName" />
 
 
         <EditText
@@ -53,11 +59,14 @@
 
         <Button
             android:id="@+id/IniciarSesionBtn"
+            style="@style/FirebaseUI.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#5E56CC"
             android:gravity="center"
             android:onClick="RegistrarUsuario"
             android:text="@string/btn_registrarse_sesion" />
+
         <ImageView
             android:id="@+id/ivFoto"
             android:layout_width="151dp"
@@ -78,8 +87,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="100dp"
+            android:background="#5E56CC"
             android:gravity="center"
             android:text="Tomar Foto"
+            android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.538"

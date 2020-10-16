@@ -4,19 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".IniciarSesion">
 
     <LinearLayout
-        android:layout_width="367dp"
-        android:layout_height="627dp"
+        android:layout_width="374dp"
+        android:layout_height="831dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.432"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502">
+        app:layout_constraintVertical_bias="0.29000002">
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="match_parent"
+            android:layout_height="375dp"
+            app:srcCompat="@drawable/usuario" />
 
         <EditText
             android:id="@+id/Correo"
@@ -24,30 +31,47 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Correo"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:src="@drawable/usuario" />
 
         <EditText
             android:id="@+id/Contrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ems="10"
             android:hint="Contraseña"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/IniciarSesionBtn"
+            style="@style/FirebaseUI.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#5E56CC"
             android:gravity="center"
             android:onClick="iniciarSesion"
             android:text="@string/btn_iniciar_sesion" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:orientation="vertical">
+
+        </LinearLayout>
 
         <Button
             android:id="@+id/RecuperarContrasena"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#5E56CC"
+            android:foregroundTint="#9F3838"
             android:onClick="OlvidoContrasena"
-            android:text="@string/btn_reset_pass" />
+            android:text="@string/btn_reset_pass"
+            android:textColor="#FFFFFF" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="13dp"
+            android:orientation="vertical"></LinearLayout>
 
         <com.google.android.gms.common.SignInButton
             android:id="@+id/google_singin"

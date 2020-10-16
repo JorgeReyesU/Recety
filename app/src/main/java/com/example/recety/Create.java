@@ -106,11 +106,10 @@ public class Create extends Fragment {
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getActivity().getApplicationContext());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         FirebaseUser userfire = FirebaseAuth.getInstance().getCurrentUser();
-        final String idgoogle = userfire.getUid();
-        final String idfire = user.getUid();
-
-
         if(user != null || userfire != null){
+        final String idgoogle = userfire.getUid();
+        final  String idfire = user.getUid();
+
             btnGuardarReceta.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View view){
@@ -146,12 +145,11 @@ public class Create extends Fragment {
                             }
                         }
                     });
-                    Toast.makeText(getActivity().getApplicationContext(), "GUARDADA" + idgoogle + idfire,Toast.LENGTH_SHORT).show();
                 }
 
             });
         }else{
-            Toast.makeText(getActivity().getApplicationContext(), "iniciar sesion",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity().getApplicationContext(), "Para agregar receta, inicie sesion buen hombre",Toast.LENGTH_SHORT).show();
         }
 
 

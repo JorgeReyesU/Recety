@@ -44,6 +44,7 @@ public class Registrarse extends AppCompatActivity {
     //DatabaseReference mDatabase;
     private DatabaseReference mDatabase;
 
+
     private EditText nombre;
     private EditText correo;
     private EditText contrasena;
@@ -66,6 +67,7 @@ public class Registrarse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
+        getSupportActionBar().hide();
 
 
         ivFoto = findViewById(R.id.ivFoto);

@@ -7,6 +7,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.text.method.ScrollingMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,6 +15,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,15 +31,20 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Settings#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class Settings extends Fragment {
-
+    TextView mTextViewResult;
     TextView name,name2;
     TextView correo;
+    private RequestQueue mQueue;
     private Button btnCerrarSesion;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -84,6 +96,9 @@ public class Settings extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_settings2, container, false);
+
+
+
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         btnCerrarSesion = v.findViewById(R.id.CerrarSesion);
@@ -91,11 +106,10 @@ public class Settings extends Fragment {
         correo = v.findViewById(R.id.textCorreo2);
         GoogleSignInAccount signInAccount = GoogleSignIn.getLastSignedInAccount(getActivity().getApplicationContext());
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-
-        if(user != null){
+        FirebaseUser userfire = FirebaseAuth.getInstance().getCurrentUser();
+        if(user != null || userfire != null){
             name.setText(user.getDisplayName());
             correo.setText(user.getEmail());
-        }
 
         String id = mAuth.getCurrentUser().getUid();
         mDatabase.child("Users").child(id).addValueEventListener(new ValueEventListener() {
@@ -115,6 +129,10 @@ public class Settings extends Fragment {
 
             }
         });
+        }else{
+            name.setText("");
+            correo.setText("");
+        }
 
         btnCerrarSesion.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -130,4 +148,6 @@ public class Settings extends Fragment {
         return v;
 
     }
+
+
 }

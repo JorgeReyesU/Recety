@@ -24,6 +24,8 @@ public class RecuperarContrasena extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_contrasena);
+        getSupportActionBar().hide();
+
 
         mAuth = FirebaseAuth.getInstance();
         correo = findViewById(R.id.Correo);

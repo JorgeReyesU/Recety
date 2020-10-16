@@ -1,69 +1,242 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/texto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/fondo"
     tools:context=".VentanaLogin">
 
-    <LinearLayout
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="230dp"
+        android:layout_height="206dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="90dp"
+        android:layout_marginTop="146dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginBottom="379dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="388dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="335dp"
+        android:fontFamily="serif"
+        android:foregroundTint="#5F5375"
+        android:text="Disfruta y comparte cualquier receta con Recety"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textColorHighlight="#000000" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/Base.Widget.MaterialComponents.TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="116dp"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="373dp"
+        android:layout_marginEnd="92dp"
+        android:layout_marginBottom="212dp"
+        android:fontFamily="serif"
+        android:foregroundTint="#E91E63"
+        android:text="Un lugar donde descubrir recetas a la medida de tus necesidades."
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#4A4F51"
+        android:textColorHighlight="#000000" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="321dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/zanahoria" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="82dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="259dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/tomate" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="197dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/aguacate" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="136dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/pollo" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/sal" />
+
+    <ImageView
+        android:id="@+id/imageView14"
+        android:layout_width="70dp"
+        android:layout_height="39dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="608dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="199dp"
+        app:srcCompat="@drawable/pasta" />
+
+    <Button
+        android:id="@+id/IniciarSesionPantalla"
+        style="@style/FirebaseUI.Button"
+        android:layout_width="290dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="130dp"
+        android:background="#5E56CC"
+        android:onClick="irIniciar"
+        android:text="@string/btn_iniciar_sesion" />
+
+    <TextView
+        android:id="@+id/IniciarSinCuenta"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="388dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="622dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="11dp"
+        android:clickable="true"
+        android:fontFamily="serif"
+        android:foregroundTint="#5F5375"
+        android:text="Ingresar sin cuenta"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#673AB7"
+        android:textColorHighlight="#000000" />
+
+    <TextView
+        android:id="@+id/iniciarRegistrarse"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="388dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="578dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginBottom="55dp"
+        android:clickable="true"
+        android:fontFamily="serif"
+        android:foregroundTint="#5F5375"
+        android:text="Registrarse"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#673AB7"
+        android:textColorHighlight="#000000" />
+
+    <TextView
+        android:text="Desea consultar la agenda de INVESSOFT?"
+        android:id="@+id/text_view_result"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp">
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:scrollbars="vertical"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <TextView
+        android:id="@+id/button_parse"
+        style="@style/Widget.AppCompat.TextView.SpinnerItem"
+        android:layout_width="388dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/imageView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="666dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="-30dp"
+        android:clickable="true"
+        android:fontFamily="serif"
+        android:foregroundTint="#5F5375"
+        android:text="Agenda invesoft"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#673AB7"
+        android:textColorHighlight="#000000" />
 
-            <Button
-                android:id="@+id/IniciarSesionPantalla"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="irIniciar"
-                android:text="@string/btn_iniciar_pantalla" />
-
-            <Button
-                android:id="@+id/home"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="irHome"
-                android:text="@string/btn_irHome" />
-
-            <Button
-                android:id="@+id/RegistroPantalla"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:onClick="irRegistrar"
-                android:text="@string/btn_registrar" />
-
-
-            <TextView
-                android:text="Desea consultar la agenda de INVESSOFT?"
-                android:id="@+id/text_view_result"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@android:color/black"
-                android:textSize="20sp"
-                android:gravity="center"
-                android:scrollbars="vertical"/>
-
-            <Button
-                android:id="@+id/button_parse"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Agenda" />
-
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

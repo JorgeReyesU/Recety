@@ -41,6 +41,7 @@ public class IniciarSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
+        getSupportActionBar().hide();
 
         correo = findViewById(R.id.Correo);
         contrasena = findViewById(R.id.Contrasena);

@@ -22,15 +22,34 @@ import org.json.JSONObject;
 public class VentanaLogin extends AppCompatActivity {
     private TextView mTextViewResult;
     private RequestQueue mQueue;
+    TextView IrHome, IrRegistrarse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ventana_login);
+        getSupportActionBar().hide();
+        IrHome = findViewById(R.id.IniciarSinCuenta);
+        IrRegistrarse = findViewById(R.id.iniciarRegistrarse);
+        IrHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                irHome();
+            }
+
+        });
+        IrRegistrarse.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                irRegistrar();
+            }
+
+        });
+
         mTextViewResult = findViewById(R.id.text_view_result);
-        mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
-        Button buttonParse = findViewById(R.id.button_parse);
-        mQueue = Volley.newRequestQueue(this);
+     mTextViewResult.setMovementMethod(new ScrollingMovementMethod());
+       TextView buttonParse = findViewById(R.id.button_parse);
+       mQueue = Volley.newRequestQueue(this);
 
         buttonParse.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,12 +67,12 @@ public class VentanaLogin extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void irRegistrar(View view){
+    public void irRegistrar(){
             Intent i = new Intent(this, Registrarse.class);
             startActivity(i);
     }
 
-    public void irHome(View view){
+    public void irHome(){
         Intent i = new Intent(this, MainActivity.class );
         startActivity(i);
     }
